@@ -1,0 +1,11 @@
+text = input("Enter a sentence: ").lower()
+
+positive = ["happy", "good", "great", "awesome", "excellent"]
+negative = ["sad", "bad", "angry", "worst", "poor"]
+
+if any(word in text for word in positive):
+    print("Mood: Positive 😊")
+elif any(word in text for word in negative):
+    print("Mood: Negative 😔")
+else:
+    print("Mood: Neutral 😐")
