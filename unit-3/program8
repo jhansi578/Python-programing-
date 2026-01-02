@@ -1,0 +1,12 @@
+cmd = input("Say operation (add/sub/mul/div): ")
+a = int(input("Enter a: "))
+b = int(input("Enter b: "))
+
+if cmd == "add":
+    print(a + b)
+elif cmd == "sub":
+    print(a - b)
+elif cmd == "mul":
+    print(a * b)
+elif cmd == "div":
+    print(a / b)
