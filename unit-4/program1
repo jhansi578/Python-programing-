@@ -1,0 +1,10 @@
+msg = input("You: ").lower()
+
+if "hello" in msg:
+    print("Bot: Hi there!")
+elif "name" in msg:
+    print("Bot: I am Python Bot")
+elif "bye" in msg:
+    print("Bot: Goodbye 👋")
+else:
+    print("Bot: I don't understand")
