@@ -1,0 +1,9 @@
+books = ["Python", "AI", "ML"]
+
+book = input("Enter book name: ")
+
+if book in books:
+    books.remove(book)
+    print("Book Issued")
+else:
+    print("Not Available")
