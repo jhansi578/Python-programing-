@@ -1,0 +1,12 @@
+score = 0
+
+q = {
+ "Python is": "language",
+ "2+2": "4"
+}
+
+for i in q:
+    if input(i + ": ") == q[i]:
+        score += 1
+
+print("Score:", score)
