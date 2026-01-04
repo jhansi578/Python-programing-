@@ -1,0 +1,11 @@
+students = {"Jhansi":0, "Ravi":0, "Anu":0}
+
+name = input("Enter name: ")
+
+if name in students:
+    students[name] += 1
+    print("Attendance marked")
+else:
+    print("Student not found")
+
+print(students)
