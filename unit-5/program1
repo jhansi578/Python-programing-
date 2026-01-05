@@ -1,0 +1,43 @@
+import json
+
+def is_complex_object(json_string):
+    # Check if input is empty
+    if not json_string:
+        return False
+
+    # Check if JSON string starts correctly
+    if not json_string.startswith('{') and not json_string.startswith('['):
+        return False
+
+    try:
+        # Load JSON string into Python object
+        data = json.loads(json_string)
+    except json.JSONDecodeError:
+        return False
+
+    # Check if object is dictionary
+    if isinstance(data, dict):
+        return any(isinstance(value, (dict, list)) for value in data.values())
+
+    # Check if object is list
+    elif isinstance(data, list):
+        return any(isinstance(item, (dict, list)) for item in data)
+
+    else:
+        return False
+
+
+# Test cases
+json_strings = [
+    '{"key": "value"}',                     # Simple object
+    '{"key": {"nested": "value"}}',         # Complex object
+    '[{"key": "value"}, {"key": "value"}]', # Complex object (list)
+    '{"key": ["value1", "value2"]}',        # Complex object (list)
+    '{"key": [{"nested": "value"}]}',       # Complex object (nested list)
+    'Invalid JSON',                         # Invalid JSON
+    ''                                      # Empty string
+]
+
+for json_string in json_strings:
+    result = is_complex_object(json_string)
+    print(f'JSON String: {json_string}, Complex Object: {result}')
