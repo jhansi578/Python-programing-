@@ -1,0 +1,7 @@
+def digital_root(n):
+    while n > 9:
+        n = sum(map(int, str(n)))
+    return n
+
+num = 98765
+print("Digital Root:", digital_root(num))
